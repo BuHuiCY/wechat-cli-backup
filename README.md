@@ -1,23 +1,35 @@
-# WeChat CLI 1.6.21 — macOS arm64 binary backup
+# WeChat CLI：项目源码与本机版本备份
 
-本仓库备份本机安装的 WeChat CLI **1.6.21**，适用于 macOS Apple Silicon（arm64）。这是已编译程序备份，不是源码仓库。
+这里集中保存 [huohuoer/wechat-cli](https://github.com/huohuoer/wechat-cli) 的项目快照，以及本机已安装的 WeChat CLI 1.6.21 程序备份。
 
-## 文件
+## 目录导航
 
-- `wechat-cli-1.6.21-macos-arm64.tar.gz`：包含 `wechat-cli`、`wxkey` 和 `lib/libWCDB.dylib`。
-- `SHA256SUMS`：原始程序与压缩包的 SHA-256 校验值。
+| 内容 | 入口 | 说明 |
+| --- | --- | --- |
+| 下载的项目源码 | [wechat-cli-upstream-a378923.zip](wechat-cli-upstream-a378923.zip) | 完整保留上游当前提交的 51 个文件，未修改内容 |
+| 项目中文说明 | 压缩包内 `upstream/README_CN.md` | 上游安装、命令及使用说明 |
+| 项目英文说明 | 压缩包内 `upstream/README.md` | 上游原始英文文档 |
+| 项目许可证 | 压缩包内 `upstream/LICENSE`（Apache-2.0） | 适用于下载的上游项目 |
+| 本机程序备份 | [1.6.21 macOS arm64](wechat-cli-1.6.21-macos-arm64.tar.gz) | 主程序、wxkey、libWCDB.dylib |
+| 本机备份说明 | [LOCAL-BINARY.md](LOCAL-BINARY.md) | 内容、解压与版本验证说明 |
+| 本机备份校验值 | [SHA256SUMS](SHA256SUMS) | 原程序与压缩包 SHA-256 |
 
-不包含微信聊天记录、账号配置、数据库、密钥、媒体或其他个人资料。
+## 来源与版本
 
-## 解压与验证
+- 下载来源：https://github.com/huohuoer/wechat-cli
+- 快照提交：`a3789232d4f79bf0b30634d9dadbce71e4acd601`
+- 整理日期：2026-11-13。
+- 上游 `pyproject.toml` 标注版本 **0.2.4**；本机程序返回版本 **1.6.21**。两者对应关系尚未核实，不能把本机程序视为该源码编译的产物。
+- 上游文件按原样复制，保留原作者说明、致谢和 Apache-2.0 许可证。该许可证不自动覆盖来源尚未核实的本机二进制。
 
-```sh
-tar -xzf wechat-cli-1.6.21-macos-arm64.tar.gz
-./wechat-cli/wechat-cli --version
-```
+## 使用与验证范围
 
-本机验证主程序返回版本 `1.6.21`；未在其他电脑验证运行。使用前需自行完成必要的本地配置。
+下载并解压源码 ZIP 后，请进入 `upstream/` 阅读源码与上游使用说明。源码安装命令需在该目录执行。本次仅整理、备份文件，没有安装或运行上游程序，也没有更改现有微信及 CLI 配置。
 
-## 来源与权利
+本机备份只验证了版本输出和文件完整性；没有在其他电脑验证运行。`libWCDB.dylib` 还引用本机 Homebrew 的 SQLCipher 和 OpenSSL 4 动态库，备份包并非完全独立的安装包。
 
-备份日期：2026-11-13。文件来自已有本地安装，原始上游与许可证尚未核实。本仓库不声明原程序的著作权，也不额外授予其使用或再分发许可。
+仓库不包含本机微信聊天记录、账号配置、数据库、密钥或私人媒体。
+
+## 源码快照完整性
+
+源码 ZIP 的 SHA-256：`fd5bd64d5ee21a3828f9e68db5f1944433e18becdad86212dfcf3e94dcfa03e7`。压缩包内 51 个文件已与上述上游提交逐个核对一致，包含原始文档、图片、源码和随仓库分发的辅助程序；不包含 `.git` 历史。
