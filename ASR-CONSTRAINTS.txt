@@ -1,0 +1,4 @@
+# faster-whisper 1.2.1 uses the metadata_errors argument in av.open().
+faster-whisper==1.2.1
+av==16.1.0
+silk-python==0.2.9
