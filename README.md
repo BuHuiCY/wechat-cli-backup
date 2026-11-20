@@ -11,7 +11,7 @@
 | 项目英文说明 | 压缩包内 `upstream/README.md` | 上游原始英文文档 |
 | 项目许可证 | 压缩包内 `upstream/LICENSE`（Apache-2.0） | 适用于下载的上游项目 |
 | 本机程序备份 | [1.6.21 macOS arm64](wechat-cli-1.6.21-macos-arm64.tar.gz) | 主程序、wxkey、libWCDB.dylib |
-| 本机备份说明 | [LOCAL-BINARY.md](LOCAL-BINARY.md) | 内容、解压与版本验证说明 |
+| 本机备份说明 | [LOCAL-BINARY.md](LOCAL-BINARY.md) | 内容、解压、版本验证与语音转写说明 |
 | 本机备份校验值 | [SHA256SUMS](SHA256SUMS) | 原程序与压缩包 SHA-256 |
 
 ## 来源与版本
@@ -26,7 +26,7 @@
 
 下载并解压源码 ZIP 后，请进入 `upstream/` 阅读源码与上游使用说明。源码安装命令需在该目录执行。本次仅整理、备份文件，没有安装或运行上游程序，也没有更改现有微信及 CLI 配置。
 
-本机备份只验证了版本输出和文件完整性；没有在其他电脑验证运行。`libWCDB.dylib` 还引用本机 Homebrew 的 SQLCipher 和 OpenSSL 4 动态库，备份包并非完全独立的安装包。
+1.6.21 备份已在 macOS Apple Silicon 和微信 4.2.0 上验证版本输出、文件完整性，以及一条本地语音的转写。配置与示例见[本机语音转写](LOCAL-BINARY.md#本机语音转写)。`libWCDB.dylib` 依赖本机 Homebrew 的 SQLCipher 和 OpenSSL 4 动态库。
 
 仓库不包含本机微信聊天记录、账号配置、数据库、密钥或私人媒体。
 
